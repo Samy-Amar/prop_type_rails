@@ -12,6 +12,12 @@ require 'prop_types/errors'
 #
 # Main lib - require everything here
 module PropTypes
+  puts "ifezjfiezjiofjzefjzefezjfezofjfi
+  fjezfjpzefjoz
+  fzefjzfjpofz
+  efzejfjpfze
+  fjzefjzeo
+  fjezpfzofpe"
   #
   # Logic for methods like integer, string, etc.
   # Uses ACCEPTABLE_TYPES to define methods a nd call them
