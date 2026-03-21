@@ -6,9 +6,17 @@ module PropTypes
   # Should include the various validating methods
   # Dispatches findings to errorhandler or other objects
   class Validator
+    # rubocop:disable Lint/UnifiedInteger
+    INTEGER_TYPES = if defined?(Fixnum)
+                      [Fixnum, Bignum, Integer]
+                    else
+                      [Integer]
+                    end
+    # rubocop:enable Lint/UnifiedInteger
+
     TYPE_MAPPING = {
       string: [String],
-      integer: [Fixnum, Bignum, Integer], # rubocop:disable Lint/UnifiedInteger
+      integer: INTEGER_TYPES,
     }.freeze
     ACCEPTABLE_TYPES = TYPE_MAPPING.keys
 
