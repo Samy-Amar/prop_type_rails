@@ -24,16 +24,16 @@ module PropTypes
       end
 
       def check_custom_type_valid!(prop_type, prop)
-        raise PropTypes::InvalidType unless prop.class == prop_type
+        raise PropTypes::Errors::InvalidType unless prop.is_a?(prop_type)
       end
 
       def check_type_valid!(prop_type, prop)
-        raise PropTypes::InvalidType unless type_valid?(prop_type, prop)
+        raise PropTypes::Errors::InvalidType unless type_valid?(prop_type, prop)
       end
 
       def check_block_returns_true!(prop)
         return unless block_given?
-        raise PropTypes::FailedValidation unless yield(prop)
+        raise PropTypes::Errors::FailedValidation unless yield(prop)
       end
 
       def type_valid?(prop_type, prop)

@@ -12,17 +12,11 @@ require 'prop_types/errors'
 #
 # Main lib - require everything here
 module PropTypes
-  puts "ifezjfiezjiofjzefjzefezjfezofjfi
-  fjezfjpzefjoz
-  fzefjzfjpofz
-  efzejfjpfze
-  fjzefjzeo
-  fjezpfzofpe"
   #
   # Logic for methods like integer, string, etc.
-  # Uses ACCEPTABLE_TYPES to define methods a nd call them
+  # Uses ACCEPTABLE_TYPES to define methods and call them
   def self.method_missing(*args, &block)
-    super unless respond_to_missing?(args[0])
+    super(*args, &block) unless respond_to_missing?(args[0])
     Validator.prop_type_validation(*args, &block)
   end
 
